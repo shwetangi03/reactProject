@@ -1,6 +1,7 @@
 import React from 'react';
 
-import Expenses from "./components/Expenses/Expenses"
+import Expenses from "./components/Expenses/Expenses";
+import NewExpense from './components/NewExpense/NewExpense';
 
 const App=() =>{
   const expenses=  [
@@ -33,9 +34,15 @@ const App=() =>{
       // location: "Nerul",
     }
   ]
+
+const addExpenseHandler= expense =>{
+  console.log("In App.js");
+  console.log(expense);
+}
+
   return (
     <>
-      <h2>Let's get started</h2>
+      <NewExpense onAddExpense ={addExpenseHandler} />
       {/* {expenses.map((expenses) => (
         <ExpenseItem title={expenses.title}
           amount={expenses.amount}
